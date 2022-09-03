@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
+  <title>GitHub Repos By Date</title>
+</head>
+
+<body>
+  <section class="mainContainer container my-3 p-3">
+    <div class="row">
+      <div class="col-sm-12 col-md-4 form-group">
+        <label for="repos_input_value">Enter your date - stars DESCENDING</label>
+        <input type="date" class="form-control" id="repos_input_value" aria-describedby="empty_data" min="2018-01-01"
+          max="2022-08-31" value="2019-01-10">
+        <small id="empty_data" class="form-text text-muted">No Data Found</small>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <p class="selectLabel">Choose number of repos</p>
+        <select class="w-100 form-control" id="selectMenu">
+          <option value="100">100 Repo</option>
+          <option value="50">50 Repo</option>
+          <option value="10" selected="selected">10 Repo</option>
+          <option value="9">9 Repo</option>
+          <option value="8">8 Repo</option>
+          <option value="7">7 Repo</option>
+          <option value="6">6 Repo</option>
+          <option value="5">5 Repo</option>
+          <option value="4">4 Repo</option>
+          <option value="3">3 Repo</option>
+          <option value="2">2 Repo</option>
+          <option value="1">1 Repo</option>
+        </select>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <p class="selectLabel">Choose language of repos</p>
+        <select class="w-100 form-control" id="langMenu">
+          <option value="All">All</option>
+          <option value="PHP">PHP</option>
+          <option value="Python">Python</option>
+          <option value="HTML">HTML</option>
+          <option value="JavaScript" selected="selected">JavaScript</option>
+          <option value="TypeScript">TypeScript</option>
+          <option value="Swift">Swift</option>
+          <option value="R">R</option>
+          <option value="C">C</option>
+          <option value="C++">C++</option>
+          <option value="C#">C#</option>
+          <option value="Jupyter Notebook">Jupyter Notebook</option>
+          <option value="Haskell">Haskell</option>
+          <option value="Shell">Shell</option>
+          <option value="CSS">CSS</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="Go">Go</option>
+          <option value="Java">Java</option>
+          <option value="Rust">Rust</option>
+          <option value="Objective-C">Objective-C</option>
+          <option value="SCSS">SCSS</option>
+          <option value="Dart">Dart</option>
+        </select>
+      </div>
+      <div class="col-sm-12 d-flex justify-content-center align-items-center mt-3 mb-2">
+        <button type="submit" class="btn btn-success" onclick="fetchApi()">Fetch Repos</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-3 githubRepos">
+    <div class="row d-flex justify-content-between align-items-center">
+      <div class="col-sm-12 table-responsive">
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th scope="col">NUM</th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col">Language</th>
+              <th scope="col">Stars</th>
+              <th scope="col">URL</th>
+            </tr>
+          </thead>
+          <tbody id="repos_info">
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+    crossorigin="anonymous"></script>
+  <script src="./main.js"></script>
+</body>
+
+</html>
